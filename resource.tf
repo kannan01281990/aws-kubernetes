@@ -78,7 +78,7 @@ resource "aws_instance" "instance" {
 
   user_data = <<-EOF
 		#!/bin/bash
-		sudo apt update
+		sudo update
 		sudo apt-get install -y python
         sudo hostnamectl set-hostname "${element(var.instance_tags, count.index)}"
         EOF
